@@ -8,8 +8,8 @@
     <ProjectGuid>{1FD8C8BB-F8A8-4E60-A1D9-ADFFA07F3E48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Code.UseAbilities.System</RootNamespace>
-    <AssemblyName>Common.Code.UseAbilities.System</AssemblyName>
+    <RootNamespace>UseAbilities.System</RootNamespace>
+    <AssemblyName>UseAbilities.System</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

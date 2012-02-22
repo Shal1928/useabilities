@@ -1,4 +1,4 @@
-﻿namespace Common.Code.UseAbilities.System.Core.Enums
+﻿namespace UseAbilities.System.Core.Enums
 {
     /// <summary>
     /// WorkSation: The operating system is Windows 7, Windows Vista, Windows XP Professional, Windows XP Home Edition, or Windows 2000 Professional.

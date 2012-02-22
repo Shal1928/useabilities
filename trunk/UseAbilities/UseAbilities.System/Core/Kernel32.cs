@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
-using Common.Code.UseAbilities.System.Core.Structs;
+using UseAbilities.System.Core.Structs;
 
-namespace Common.Code.UseAbilities.System.Core
+namespace UseAbilities.System.Core
 {
     internal static class Kernel32
     {

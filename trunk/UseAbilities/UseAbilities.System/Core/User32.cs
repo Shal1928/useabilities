@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
-using Common.Code.UseAbilities.System.Core.Enums;
+using UseAbilities.System.Core.Enums;
 
-namespace Common.Code.UseAbilities.System.Core
+namespace UseAbilities.System.Core
 {
     internal static class User32
     {

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Common.Code.UseAbilities.WPF.Converters.Test
+namespace UseAbilities.WPF.Converters.Test
 {
     public class TestConverter : IValueConverter
     {

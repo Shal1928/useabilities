@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace Common.Code.UseAbilities.IoC.Extensions
+namespace UseAbilities.IoC.Extensions
 {
     internal static class DictionaryExtensions
     {

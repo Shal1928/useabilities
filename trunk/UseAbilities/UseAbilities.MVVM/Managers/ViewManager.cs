@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
-using Common.Code.UseAbilities.MVVM.Base;
+using UseAbilities.MVVM.Base;
 
-namespace Common.Code.UseAbilities.MVVM.Managers
+namespace UseAbilities.MVVM.Managers
 {
     public static class ViewManager
     {

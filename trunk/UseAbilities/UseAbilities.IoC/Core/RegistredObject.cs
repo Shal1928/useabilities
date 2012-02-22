@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Common.Code.UseAbilities.IoC.Extensions;
+using UseAbilities.IoC.Extensions;
 
-namespace Common.Code.UseAbilities.IoC.Core
+namespace UseAbilities.IoC.Core
 {
     internal class RegisteredObject
     {

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using Common.Code.UseAbilities.MVVM.Managers;
-using Common.MVVM.Core.Base;
+using UseAbilities.MVVM.Managers;
 
-namespace Common.Code.UseAbilities.MVVM.Base
+namespace UseAbilities.MVVM.Base
 {
     public abstract class ViewModelBase : ObserveProperty, IDisposable
     {

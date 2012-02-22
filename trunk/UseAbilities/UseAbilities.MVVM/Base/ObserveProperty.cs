@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
-using Common.Code.UseAbilities.MVVM.Base;
 
-namespace Common.MVVM.Core.Base
+namespace UseAbilities.MVVM.Base
 {
     public abstract class ObserveProperty : IObservePropery
     {

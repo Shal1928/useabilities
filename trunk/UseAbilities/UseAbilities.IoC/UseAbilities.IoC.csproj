@@ -8,8 +8,8 @@
     <ProjectGuid>{DE23B5FE-C3AE-4A28-A5E3-F619A2D47822}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Code.UseAbilities.IoC</RootNamespace>
-    <AssemblyName>Common.Code.UseAbilities.IoC</AssemblyName>
+    <RootNamespace>UseAbilities.IoC</RootNamespace>
+    <AssemblyName>UseAbilities.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -54,6 +54,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

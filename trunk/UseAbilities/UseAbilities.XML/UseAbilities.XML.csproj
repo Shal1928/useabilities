@@ -8,8 +8,8 @@
     <ProjectGuid>{97225C39-2835-4707-AD09-AA60795D3D22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Code.UseAbilities.XML</RootNamespace>
-    <AssemblyName>Common.Code.UseAbilities.XML</AssemblyName>
+    <RootNamespace>UseAbilities.XML</RootNamespace>
+    <AssemblyName>UseAbilities.XML</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

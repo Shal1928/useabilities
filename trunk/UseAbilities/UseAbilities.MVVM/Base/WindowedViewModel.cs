@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Common.Code.UseAbilities.MVVM.Base
+﻿namespace UseAbilities.MVVM.Base
 {
     public class WindowedViewModel : ViewModelBase
     {

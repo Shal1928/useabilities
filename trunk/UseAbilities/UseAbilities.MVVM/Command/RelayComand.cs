@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace Common.Code.UseAbilities.MVVM.Command
+namespace UseAbilities.MVVM.Command
 {
     public class RelayCommand<T> : ICommand
     {
