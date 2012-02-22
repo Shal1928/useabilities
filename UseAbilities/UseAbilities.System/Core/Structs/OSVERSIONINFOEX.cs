@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Common.Code.UseAbilities.System.Core.Structs
+namespace UseAbilities.System.Core.Structs
 {
     [StructLayout(LayoutKind.Sequential)]
     internal struct OSVERSIONINFOEX

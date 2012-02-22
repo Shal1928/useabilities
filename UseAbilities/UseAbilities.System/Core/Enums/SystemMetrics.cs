@@ -1,4 +1,4 @@
-﻿namespace Common.Code.UseAbilities.System.Core.Enums
+﻿namespace UseAbilities.System.Core.Enums
 {
     internal enum SystemMetrics
     {

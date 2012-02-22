@@ -8,8 +8,8 @@
     <ProjectGuid>{7C97B481-71B8-4919-90FB-7C4D20DB8FC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Code.UseAbilities.WPF</RootNamespace>
-    <AssemblyName>Common.Code.UseAbilities.WPF</AssemblyName>
+    <RootNamespace>UseAbilities.WPF</RootNamespace>
+    <AssemblyName>UseAbilities.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -58,6 +58,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

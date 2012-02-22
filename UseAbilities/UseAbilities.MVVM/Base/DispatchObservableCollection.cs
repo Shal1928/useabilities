@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using System.Windows.Threading;
 
-namespace Common.Code.UseAbilities.MVVM.Base
+namespace UseAbilities.MVVM.Base
 {
     public class DispatchObservableCollection<T> : ObservableCollection<T>
     {

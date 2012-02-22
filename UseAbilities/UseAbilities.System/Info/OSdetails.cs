@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Common.Code.UseAbilities.System.Core;
-using Common.Code.UseAbilities.System.Core.Enums;
-using Common.Code.UseAbilities.System.Core.Structs;
-using Common.Code.UseAbilities.System.Structs;
+using UseAbilities.System.Core;
+using UseAbilities.System.Core.Enums;
+using UseAbilities.System.Core.Structs;
+using UseAbilities.System.Structs;
 
-namespace Common.Code.UseAbilities.System.Info
+namespace UseAbilities.System.Info
 {
     public static class OSdetails
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Code.UseAbilities.System.Structs
+namespace UseAbilities.System.Structs
 {
     public struct SystemVersion
     {

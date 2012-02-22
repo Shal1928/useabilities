@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows;
-using Common.MVVM.Core.Base;
 
-namespace Common.Code.UseAbilities.MVVM.Base
+namespace UseAbilities.MVVM.Base
 {
     public class ViewBase : Window
     {

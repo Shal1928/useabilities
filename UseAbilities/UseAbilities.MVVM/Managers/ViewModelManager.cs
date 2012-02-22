@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using Common.Code.UseAbilities.MVVM.Base;
+using UseAbilities.MVVM.Base;
 
-namespace Common.Code.UseAbilities.MVVM.Managers
+namespace UseAbilities.MVVM.Managers
 {
     public static class ViewModelManager
     {

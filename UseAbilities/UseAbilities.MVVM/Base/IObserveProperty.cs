@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 
-namespace Common.Code.UseAbilities.MVVM.Base
+namespace UseAbilities.MVVM.Base
 {
     /// <summary>
     /// More comfortable interface for observe properties changes

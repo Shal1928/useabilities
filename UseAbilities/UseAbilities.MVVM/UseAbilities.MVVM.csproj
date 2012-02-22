@@ -8,8 +8,8 @@
     <ProjectGuid>{57F43EF1-0DD3-4A2A-9527-E3ADF6F73790}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Code.UseAbilities.MVVM</RootNamespace>
-    <AssemblyName>Common.MVVM.Core</AssemblyName>
+    <RootNamespace>UseAbilities.MVVM</RootNamespace>
+    <AssemblyName>UseAbilities.MVVM</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>Svn</SccProjectName>

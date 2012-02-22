@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Common.Code.UseAbilities.IoC.Attributes;
+using UseAbilities.IoC.Attributes;
 
-namespace Common.Code.UseAbilities.IoC.Core
+namespace UseAbilities.IoC.Core
 {
     public class IoC
     {

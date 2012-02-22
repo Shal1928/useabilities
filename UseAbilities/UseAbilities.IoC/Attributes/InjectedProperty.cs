@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Code.UseAbilities.IoC.Attributes
+namespace UseAbilities.IoC.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class InjectedProperty : Attribute

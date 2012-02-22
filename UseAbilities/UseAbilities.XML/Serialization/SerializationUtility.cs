@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Xml;
 
-namespace Common.Code.UseAbilities.XML.Serialization
+namespace UseAbilities.XML.Serialization
 {
     public static class SerializationUtility
     {

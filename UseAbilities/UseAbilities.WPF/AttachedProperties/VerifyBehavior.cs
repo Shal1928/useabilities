@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Common.Code.UseAbilities.WPF.AttachedProperties
+namespace UseAbilities.WPF.AttachedProperties
 {
     public static class VerifyBehavior
     {
