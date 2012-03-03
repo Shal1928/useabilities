@@ -24,6 +24,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAbilities.Visual", "UseA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAbilities.Controls", "UseAbilities.Controls\UseAbilities.Controls.csproj", "{430AC6DC-ABB3-40AD-8960-9DE701320537}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apache", "Apache", "{13291B55-D173-4C07-874E-56456920D27D}"
+	ProjectSection(SolutionItems) = preProject
+		ExternalLibraries\Apache\Lucene.Net.Analyzers.dll = ExternalLibraries\Apache\Lucene.Net.Analyzers.dll
+		ExternalLibraries\Apache\Lucene.Net.Contrib.Core.dll = ExternalLibraries\Apache\Lucene.Net.Contrib.Core.dll
+		ExternalLibraries\Apache\Lucene.Net.dll = ExternalLibraries\Apache\Lucene.Net.dll
+		ExternalLibraries\Apache\Lucene.Net.FastVectorHighlighter.dll = ExternalLibraries\Apache\Lucene.Net.FastVectorHighlighter.dll
+		ExternalLibraries\Apache\Lucene.Net.Highlighter.dll = ExternalLibraries\Apache\Lucene.Net.Highlighter.dll
+		ExternalLibraries\Apache\Lucene.Net.IsolatedStorage.dll = ExternalLibraries\Apache\Lucene.Net.IsolatedStorage.dll
+		ExternalLibraries\Apache\Lucene.Net.Queries.dll = ExternalLibraries\Apache\Lucene.Net.Queries.dll
+		ExternalLibraries\Apache\Lucene.Net.Search.Regex.dll = ExternalLibraries\Apache\Lucene.Net.Search.Regex.dll
+		ExternalLibraries\Apache\Lucene.Net.Search.SimpleFacetedSearch.dll = ExternalLibraries\Apache\Lucene.Net.Search.SimpleFacetedSearch.dll
+		ExternalLibraries\Apache\Lucene.Net.Snowball.dll = ExternalLibraries\Apache\Lucene.Net.Snowball.dll
+		ExternalLibraries\Apache\Lucene.Net.Spatial.dll = ExternalLibraries\Apache\Lucene.Net.Spatial.dll
+		ExternalLibraries\Apache\Lucene.Net.SpellChecker.dll = ExternalLibraries\Apache\Lucene.Net.SpellChecker.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.9.4g - Feb 7, 2012", "2.9.4g - Feb 7, 2012", "{1DA7FA46-F6EB-4D2D-8354-64B948563959}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -124,5 +142,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{41CF6FC9-45FA-4797-B935-DD33E8078ACB} = {0432E800-A53C-490E-91B4-7C5E7D61233E}
+		{13291B55-D173-4C07-874E-56456920D27D} = {0432E800-A53C-490E-91B4-7C5E7D61233E}
+		{1DA7FA46-F6EB-4D2D-8354-64B948563959} = {13291B55-D173-4C07-874E-56456920D27D}
 	EndGlobalSection
 EndGlobal
