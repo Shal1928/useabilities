@@ -17,6 +17,11 @@ namespace UseAbilities.Extensions.Enums
         //    throw new ArgumentException("The string is not a description or value of the specified enum.");
         //}
 
+        //public static string GetDescriptionByType(this Enum enumValue, Type attributeType)
+        //{
+        //    return StringValueOf(enumValue, attributeType);
+        //}
+
         public static string DescriptionOf(this Enum enumValue)
         {
             return StringValueOf(enumValue, typeof(DescriptionAttribute));
