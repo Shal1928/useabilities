@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 
-namespace UseAbilities.Extensions.Enums
+namespace UseAbilities.Extensions.EnumExt
 {
     public static class DescriptionOfExt
     {
