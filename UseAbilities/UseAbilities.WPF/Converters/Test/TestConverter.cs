@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows.Data;
+using UseAbilities.WPF.Converters.Base;
 
 namespace UseAbilities.WPF.Converters.Test
 {
-    public class TestConverter : IValueConverter
+    public class TestConverter : ConvertorBase<TestConverter>
     {
-        #region Implementation of IValueConverter
+        #region Ovveride of ConvertorBase
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return value;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return value;
         }

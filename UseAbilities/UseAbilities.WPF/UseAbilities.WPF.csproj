@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttachedProperties\VerifyBehavior.cs" />
+    <Compile Include="Converters\Base\ConvertorBase.cs" />
     <Compile Include="Converters\Test\TestConverter.cs" />
     <Compile Include="Converters\Test\TestMultiConverter.cs" />
     <Compile Include="Custom\ErrorDisplay.cs" />
