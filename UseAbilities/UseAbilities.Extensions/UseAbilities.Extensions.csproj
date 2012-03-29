@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\DescriptionOfExt.cs" />
+    <Compile Include="DateTimeExt\DateTimeWeekExt.cs" />
+    <Compile Include="EnumExt\DescriptionOfExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
