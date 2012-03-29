@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DateTimeExt\DateTimeWeekExt.cs" />
     <Compile Include="EnumExt\DescriptionOfExt.cs" />
+    <Compile Include="Helpers\EnumViewWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
