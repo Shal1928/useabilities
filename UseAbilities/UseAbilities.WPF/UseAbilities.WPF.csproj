@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttachedProperties\VerifyBehavior.cs" />
+    <Compile Include="Bindings\SelfBinding.cs" />
     <Compile Include="Converters\Base\ConverterMarkupExtensionBase.cs" />
     <Compile Include="Converters\Base\ConvertorBase.cs" />
     <Compile Include="Converters\Base\MultiConverterBase.cs" />
@@ -76,6 +77,9 @@
   <ItemGroup>
     <Folder Include="Behaviors\" />
     <Folder Include="Triggers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes\XmlnsDefinition.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
