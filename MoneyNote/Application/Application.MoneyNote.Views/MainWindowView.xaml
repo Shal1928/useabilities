@@ -1,0 +1,52 @@
+﻿<Window:ViewBase 
+    x:Class="Application.MoneyNote.Views.MainWindowView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Window="clr-namespace:Common.MVVM.Core.Base;assembly=Common.MVVM.Core" 
+    Style="{DynamicResource ChromeWindow}"
+    Width="800"
+    Height="600">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Common.Visual;component/Themes/ChromeWindow.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        
+        <Border Background="#ffFFFFFF" Opacity="0.85" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Width="160" HorizontalAlignment="Left">
+            <Image Source="/Application.MoneyNote;component/Resources\2_48x48.png" 
+                                           Width="48" 
+                                           Height="48" 
+                                           Margin="6" />
+            <TextBlock Text="MoneyNote 1.0" FontFamily="Verdana" VerticalAlignment="Center" Margin="0,0,0,15" />
+        </StackPanel>
+
+
+        <Border Opacity="0.85" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#ffAAAAAA" Offset="-0.1"/>
+                    <GradientStop Color="#ffFFFFFF" Offset="0.03"/>
+                    <GradientStop Color="#ffFFFFFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+    </Grid>
+</Window:ViewBase>
