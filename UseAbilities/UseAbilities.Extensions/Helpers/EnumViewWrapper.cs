@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using UseAbilities.Extensions.EnumExt;
 
 namespace UseAbilities.Extensions.Helpers
@@ -13,7 +13,7 @@ namespace UseAbilities.Extensions.Helpers
         /// <summary>
         /// Enum Value
         /// </summary>
-        public T Value
+        public Enum Value
         {
             get; 
             private set;
@@ -26,20 +26,28 @@ namespace UseAbilities.Extensions.Helpers
         {
             get
             {
-                var value = (object)Value;
-                Debug.Assert(value is Enum, "T is not Enum");
-                return ((Enum)value).DescriptionOf();
+                return Value.DescriptionOf();
             }
         }
 
         /// <summary>
         /// Constructor EnumViewWrapper
         /// </summary>
-        /// <param name="tValue">Must be Enum</param>
-        public EnumViewWrapper(T tValue)
+        /// <param name="value">Must be Enum</param>
+        internal EnumViewWrapper(Enum value)
         {
-            Debug.Assert(tValue is Enum, "T is not Enum");
-            Value = tValue;
+            Value = value;
+        }
+
+        public static List<EnumViewWrapper<T>> GetWrappedCollection()
+        {
+            var resultCollection = new List<EnumViewWrapper<T>>();
+
+            foreach (var enumValue in typeof(T).GetEnumValues())
+                resultCollection.Add(new EnumViewWrapper<T>((Enum)enumValue));
+
+
+            return resultCollection;
         }
     }
 }
