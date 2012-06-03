@@ -40,11 +40,6 @@ namespace UseAbilities.Extensions.Helpers
             Value = value;
         }
 
-        //public EnumViewWrapper(Type enumType)
-        //{
-        //    Value = enumType.GetEnumValues();
-        //}
-
         public static List<EnumViewWrapper<T>> GetWrappedCollection()
         {
             var resultCollection = new List<EnumViewWrapper<T>>();
