@@ -34,10 +34,15 @@ namespace UseAbilities.Extensions.Helpers
         /// Constructor EnumViewWrapper
         /// </summary>
         /// <param name="value">Must be Enum</param>
-        internal EnumViewWrapper(Enum value)
+        public EnumViewWrapper(Enum value)
         {
             Value = value;
         }
+
+        //public EnumViewWrapper(Type enumType)
+        //{
+        //    Value = enumType.GetEnumValues();
+        //}
 
         public static List<EnumViewWrapper<T>> GetWrappedCollection()
         {
@@ -50,4 +55,22 @@ namespace UseAbilities.Extensions.Helpers
             return resultCollection;
         }
     }
+
+    public class EnumViewWrapper : EnumViewWrapper<Enum>
+    {
+        public EnumViewWrapper(Enum value): base(value)
+        {
+            //
+        }
+    }
+
+    //public static class EnumViewWrapperExtensions
+    //{
+    //    public static Enum GetEnumValue(this Enum enumWrapper, Type enumType)
+    //    {
+
+    //    }
+    //}
+
+    
 }
