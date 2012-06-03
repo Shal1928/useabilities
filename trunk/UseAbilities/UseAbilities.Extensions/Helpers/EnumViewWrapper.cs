@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UseAbilities.Extensions.EnumExt;
+using UseAbilities.Extensions.Helpers.Interfaces;
 
 namespace UseAbilities.Extensions.Helpers
 {
@@ -8,7 +9,7 @@ namespace UseAbilities.Extensions.Helpers
     /// Wrapper for displaying description enum during the binding DescriptionOfExt
     /// </summary>
     /// <typeparam name="T">Must be Enum</typeparam>
-    public class EnumViewWrapper<T>
+    public class EnumViewWrapper<T> : IEnumViewValue
     {
         /// <summary>
         /// Enum Value
@@ -62,15 +63,5 @@ namespace UseAbilities.Extensions.Helpers
         {
             //
         }
-    }
-
-    //public static class EnumViewWrapperExtensions
-    //{
-    //    public static Enum GetEnumValue(this Enum enumWrapper, Type enumType)
-    //    {
-
-    //    }
-    //}
-
-    
+    }   
 }
