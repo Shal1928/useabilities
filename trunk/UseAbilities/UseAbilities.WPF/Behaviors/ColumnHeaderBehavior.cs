@@ -20,7 +20,7 @@ namespace UseAbilities.WPF.Behaviors
             };
         }
 
-        public static string GetPropertyDisplayName(object descriptor)
+        public virtual string GetPropertyDisplayName(object descriptor)
         {
             var pd = descriptor as PropertyDescriptor;
             if (pd != null)
