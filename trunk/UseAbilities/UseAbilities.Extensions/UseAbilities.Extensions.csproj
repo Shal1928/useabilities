@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DateTimeExt\DateTimeMonthExt.cs" />
     <Compile Include="DateTimeExt\DateTimeWeekExt.cs" />
+    <Compile Include="DateTimeExt\DateTimeYearExt.cs" />
     <Compile Include="EnumExt\DescriptionOfExt.cs" />
     <Compile Include="Helpers\EnumViewWrapper.cs" />
     <Compile Include="Helpers\Interfaces\IEnumViewValue.cs" />
