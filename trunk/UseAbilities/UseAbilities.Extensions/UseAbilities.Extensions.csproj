@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTimeExt\DateTimeMonthExt.cs" />
     <Compile Include="DateTimeExt\DateTimeWeekExt.cs" />
     <Compile Include="EnumExt\DescriptionOfExt.cs" />
     <Compile Include="Helpers\EnumViewWrapper.cs" />

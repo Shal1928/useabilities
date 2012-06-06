@@ -20,6 +20,11 @@ namespace UseAbilities.Extensions.DateTimeExt
             return dt.StartOfWeek(startOfWeek);
         }
 
+        public static DateTime LastDayOfWeekByDate(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
+        {
+            return dt.StartOfWeek(startOfWeek).AddDays(6);
+        }
+
         public static List<DateTime> GetWeek(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             var week = new List<DateTime>();
