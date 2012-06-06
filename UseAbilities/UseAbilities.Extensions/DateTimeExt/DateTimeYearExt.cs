@@ -41,7 +41,7 @@ namespace UseAbilities.Extensions.DateTimeExt
             throw new Exception("A Month can not be greater than 12 and less than 1");
         }
 
-        public static List<DateTime> GetMonth(this DateTime dt)
+        public static List<DateTime> GetMonthes(this DateTime dt)
         {
             var year = dt.Year;
 
