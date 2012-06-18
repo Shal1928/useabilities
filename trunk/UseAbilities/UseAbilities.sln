@@ -42,6 +42,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apache", "Apache", "{13291B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.9.4g - Feb 7, 2012", "2.9.4g - Feb 7, 2012", "{1DA7FA46-F6EB-4D2D-8354-64B948563959}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAbilities.DotNet", "UseAbilities.DotNet\UseAbilities.DotNet.csproj", "{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -136,6 +138,16 @@ Global
 		{430AC6DC-ABB3-40AD-8960-9DE701320537}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{430AC6DC-ABB3-40AD-8960-9DE701320537}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{430AC6DC-ABB3-40AD-8960-9DE701320537}.Release|x86.ActiveCfg = Release|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
