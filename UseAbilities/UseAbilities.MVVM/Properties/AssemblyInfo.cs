@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Common.MVVM.Core")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("UseAbilities.MVVM")]
+[assembly: AssemblyDescription("Use model view viewmodel abilities")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Common.MVVM.Core")]
+[assembly: AssemblyProduct("UseAbilities")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
