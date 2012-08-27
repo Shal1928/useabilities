@@ -108,5 +108,5 @@ namespace UseAbilities.DotNet.Reflection
         //    Console.WriteLine("The customerName field of instance custData has been set to '{0}'.",
         //                       custDataType.InvokeMember("CustomerName", BindingFlags.GetProperty,
         //                                                  null, custData, new object[] { }));
-        //}
+        }
 }
