@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("UseAbilities.Controls")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Use custom wpf controls abilities")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UseAbilities.Controls")]
+[assembly: AssemblyProduct("UseAbilities")]
 [assembly: AssemblyCopyright("Copyright © 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
