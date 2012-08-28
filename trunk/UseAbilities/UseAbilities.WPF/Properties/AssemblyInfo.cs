@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Common.Code.UseAbilities.WPF")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("UseAbilities.WPF")]
+[assembly: AssemblyDescription("Use Windows presentation foundation abilities")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Common.Code.UseAbilities.WPF")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCompany("Shalygin Danila")]
+[assembly: AssemblyProduct("UseAbilities")]
+[assembly: AssemblyCopyright("Copyright © Shalygin Danila 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
