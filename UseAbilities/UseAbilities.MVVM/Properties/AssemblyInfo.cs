@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("UseAbilities.MVVM")]
-[assembly: AssemblyDescription("Use model view viewmodel abilities")]
+[assembly: AssemblyDescription("Use abilities of ModelViewViewModel")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Shalygin Danila")]
 [assembly: AssemblyProduct("UseAbilities")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCopyright("Copyright © Shalygin Danila 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
