@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Common.Code.UseAbilities.XML")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("UseAbilities")]
+[assembly: AssemblyDescription("Use eXtensible Markup Language abilities")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Common.Code.UseAbilities.XML")]
+[assembly: AssemblyProduct("UseAbilities")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
