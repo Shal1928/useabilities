@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("UseAbilities.WPF")]
-[assembly: AssemblyDescription("Use Windows presentation foundation abilities")]
+[assembly: AssemblyDescription("Use abilities of Windows Presentation Foundation")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Shalygin Danila")]
 [assembly: AssemblyProduct("UseAbilities")]
