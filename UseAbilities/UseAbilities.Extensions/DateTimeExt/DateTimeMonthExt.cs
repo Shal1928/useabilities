@@ -6,7 +6,7 @@ namespace UseAbilities.Extensions.DateTimeExt
 {
     public static class DateTimeMonthExt
     {
-        public static List<List<DateTime>> GetWeeksAndDaysByMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
+        public static List<List<DateTime>> GetWeeksAndDaysOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             var weeks = new List<List<DateTime>>();
             var day = dt.GetStartOfMonth();
@@ -24,10 +24,15 @@ namespace UseAbilities.Extensions.DateTimeExt
             return weeks;
         }
 
-        public static List<DateTime> GetWeeksByMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
+        public static List<DateTime> GetWeeksOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
-            var weeksAndDays = dt.GetWeeksAndDaysByMonth();
-            return weeksAndDays.Select(week => week.First()).ToList();
+            return dt.GetWeeksAndDaysOfMonth().Select(week => week.First()).ToList();
+        }
+
+        public static int GetWeekNumberOfMonth(this DateTime dt)
+        {
+            var weeks = dt.GetWeeksAndDaysOfMonth();
+            return weeks.Where(week => week.Contains(dt.Date)).Select(week => weeks.IndexOf(week) + 1).FirstOrDefault();
         }
 
         public static DateTime GetStartOfMonth(this DateTime dt)
