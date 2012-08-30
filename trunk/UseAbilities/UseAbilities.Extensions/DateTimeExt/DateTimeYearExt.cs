@@ -41,6 +41,21 @@ namespace UseAbilities.Extensions.DateTimeExt
             throw new Exception("A Month can not be greater than 12 and less than 1");
         }
 
+        public static int GetQuarterNumberByMonth(this DateTime dt)
+        {
+            var month = dt.Month;
+
+            if (month <= 3) return 1;
+
+            if ((month >= 4) && (month <= 6)) return 2;
+
+            if ((month >= 7) && (month <= 9)) return 3;
+
+            if (month >= 10) return 4;
+
+            throw new Exception("A Month can not be greater than 12 and less than 1");
+        }
+
         public static List<DateTime> GetMonthes(this DateTime dt)
         {
             var year = dt.Year;
