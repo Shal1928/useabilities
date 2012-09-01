@@ -24,6 +24,12 @@ namespace UseAbilities.Extensions.DateTimeExt
             return weeks;
         }
 
+        /// <summary>
+        /// Get dates first days of weeks of target (current) month
+        /// </summary>
+        /// <param name="dt">Date</param>
+        /// <param name="startOfWeek">First day of week</param>
+        /// <returns>Collection of dates first days of week of target month</returns>
         public static List<DateTime> GetWeeksOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             return dt.GetWeeksAndDaysOfMonth().Select(week => week.First()).ToList();
@@ -34,6 +40,16 @@ namespace UseAbilities.Extensions.DateTimeExt
             var weeks = dt.GetWeeksAndDaysOfMonth();
             return weeks.Where(week => week.Contains(dt.Date)).Select(week => weeks.IndexOf(week) + 1).FirstOrDefault();
         }
+
+        public static List<DateTime> GetDaysOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
+        {
+            var result = new List<DateTime>();
+            foreach (var week in dt.GetWeeksAndDaysOfMonth())
+                result.AddRange(week);
+
+            return result;
+        }
+
 
         public static DateTime GetStartOfMonth(this DateTime dt)
         {
