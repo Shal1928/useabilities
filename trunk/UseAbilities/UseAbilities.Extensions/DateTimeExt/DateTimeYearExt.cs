@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UseAbilities.Extensions.DateTimeExt
 {
@@ -75,6 +76,16 @@ namespace UseAbilities.Extensions.DateTimeExt
                            new DateTime(year, 11, 1),
                            new DateTime(year, 12, 1)
                        };
+        }
+
+        public static List<DateTime> GetAllDaysInYear(this DateTime dt)
+        {
+            var allDays = new List<DateTime>();
+
+            foreach (var week in dt.GetMonthes().SelectMany(month => month.GetWeeksAndDaysOfMonth()))
+                allDays.AddRange(week);
+
+            return allDays;
         }
     }
 }
