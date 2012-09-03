@@ -26,7 +26,7 @@ namespace UseAbilities.WPF.Behaviors
             if (pd != null)
             {
                 var attr = pd.Attributes[typeof(DisplayNameAttribute)] as DisplayNameAttribute;
-                if ((attr != null) && (attr != DisplayNameAttribute.Default)) return attr.DisplayName;
+                if ((attr != null) && (!Equals(attr, DisplayNameAttribute.Default))) return attr.DisplayName;
             }
             else
             {
@@ -37,7 +37,7 @@ namespace UseAbilities.WPF.Behaviors
                     foreach (var att in attrs)
                     {
                         var attribute = att as DisplayNameAttribute;
-                        if ((attribute != null) && (attribute != DisplayNameAttribute.Default)) return attribute.DisplayName;
+                        if ((attribute != null) && (!Equals(attribute, DisplayNameAttribute.Default))) return attribute.DisplayName;
                     }
                 }
             }
