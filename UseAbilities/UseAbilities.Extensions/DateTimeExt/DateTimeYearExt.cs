@@ -81,9 +81,7 @@ namespace UseAbilities.Extensions.DateTimeExt
         public static List<DateTime> GetAllDaysInYear(this DateTime dt)
         {
             var allDays = new List<DateTime>();
-
-            foreach (var week in dt.GetMonthes().SelectMany(month => month.GetWeeksAndDaysOfMonth()))
-                allDays.AddRange(week);
+            allDays.AddRange(dt.GetMonthes().SelectMany(month => month.GetDaysOfMonth()));
 
             return allDays;
         }
