@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -19,6 +20,14 @@ namespace UseAbilities.DotNet.Reflection
         public static object Create(Type type, params object[] args)
         {
             var ctor = type.GetConstructors(BINDING_FLAGS_ALL_INSTANCE_CTORS).First();
+            return CreateInstance(ctor, args);
+        }
+
+        public static object Create(Type genericType, Type type, params object[] args)
+        {
+            Type[] types = {type};
+            var generic = genericType.MakeGenericType(types);
+            var ctor = generic.GetConstructors(BINDING_FLAGS_ALL_INSTANCE_CTORS).First();
             return CreateInstance(ctor, args);
         }
 
