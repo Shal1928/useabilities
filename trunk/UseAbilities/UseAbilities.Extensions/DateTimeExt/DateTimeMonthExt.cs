@@ -6,6 +6,12 @@ namespace UseAbilities.Extensions.DateTimeExt
 {
     public static class DateTimeMonthExt
     {
+        /// <summary>
+        /// Get absolute weeks (with days from another month)
+        /// </summary>
+        /// <param name="dt">Date</param>
+        /// <param name="startOfWeek">First day of week</param>
+        /// <returns>Return collection with absolute weeks (with days from another month) with collection days</returns>
         public static List<List<DateTime>> GetWeeksAndDaysOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             var weeks = new List<List<DateTime>>();
@@ -44,8 +50,21 @@ namespace UseAbilities.Extensions.DateTimeExt
         public static List<DateTime> GetDaysOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             var result = new List<DateTime>();
-            foreach (var week in dt.GetWeeksAndDaysOfMonth())
-                result.AddRange(week);
+
+            var firstDay = dt.GetStartOfMonth();
+            var lastDay = dt.GetEndOfMonth();
+            //for (var day = firstDay; day <= lastDay; day.AddDays(1))
+            //    result.Add(day);
+
+
+
+            var day = dt.GetStartOfMonth();
+
+            while (day < dt.GetEndOfMonth())
+            {
+                result.Add(day);
+                day = day.AddDays(1);
+            }
 
             return result;
         }
