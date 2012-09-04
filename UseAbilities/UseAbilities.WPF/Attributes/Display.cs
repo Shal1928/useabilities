@@ -18,5 +18,10 @@ namespace UseAbilities.WPF.Attributes
             get; 
             protected set; 
         }
+
+        public void ChangeDisplayName(string displayName)
+        {
+            DisplayNameValue = displayName;
+        }
     }
 }
