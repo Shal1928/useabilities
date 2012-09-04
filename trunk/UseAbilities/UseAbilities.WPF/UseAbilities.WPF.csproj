@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttachedProperties\VerifyBehavior.cs" />
+    <Compile Include="Attributes\Display.cs" />
     <Compile Include="Behaviors\ColumnHeaderBehavior.cs" />
     <Compile Include="Bindings\SelfBinding.cs" />
     <Compile Include="Converters\Base\ConverterMarkupExtensionBase.cs" />
