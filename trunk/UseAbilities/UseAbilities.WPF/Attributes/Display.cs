@@ -19,9 +19,9 @@ namespace UseAbilities.WPF.Attributes
             protected set; 
         }
 
-        public void ChangeDisplayName(string displayName)
+        public void ChangeDisplayName(string displayName, params object[] args)
         {
-            DisplayNameValue = displayName;
+            DisplayNameValue = string.Format(displayName, args ?? new object[0]);
         }
     }
 }
