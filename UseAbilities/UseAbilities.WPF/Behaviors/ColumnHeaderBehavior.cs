@@ -20,7 +20,10 @@ namespace UseAbilities.WPF.Behaviors
                 else e.Cancel = true;
 
                 var displayIndex = GetPropertyDisplayIndex(e.PropertyDescriptor);
-                if (displayIndex < AssociatedObject.Columns.Count && displayIndex >= 0) e.Column.DisplayIndex = displayIndex;
+                if (displayIndex >= AssociatedObject.Columns.Count) return;
+
+                if (displayIndex >= 0) e.Column.DisplayIndex = displayIndex;
+                else e.Cancel = true;
             };
         }
 

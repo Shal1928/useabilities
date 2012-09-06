@@ -23,5 +23,15 @@ namespace UseAbilities.WPF.Attributes
         {
             DisplayNameValue = string.Format(displayName, args ?? new object[0]);
         }
+
+        public void ChangeDisplayIndex(int displayIndex)
+        {
+            DisplayIndex = displayIndex;
+        }
+
+        public void Hide()
+        {
+            DisplayIndex = -1;
+        }
     }
 }
