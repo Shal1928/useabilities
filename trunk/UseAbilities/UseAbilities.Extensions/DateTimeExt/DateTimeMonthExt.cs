@@ -47,6 +47,12 @@ namespace UseAbilities.Extensions.DateTimeExt
             return weeks.Where(week => week.Contains(dt.Date)).Select(week => weeks.IndexOf(week) + 1).FirstOrDefault();
         }
 
+        public static int GetWeekNumberOfMonth(this DateTime dt, DateTime targetDt)
+        {
+            var weeks = targetDt.GetWeeksAndDaysOfMonth();
+            return weeks.Where(week => week.Contains(dt.Date)).Select(week => weeks.IndexOf(week) + 1).FirstOrDefault();
+        }
+
         public static List<DateTime> GetDaysOfMonth(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             var result = new List<DateTime>();
