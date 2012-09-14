@@ -78,6 +78,45 @@ namespace UseAbilities.Extensions.DateTimeExt
                        };
         }
 
+        public static List<List<DateTime>> GetQuarters(this DateTime dt)
+        {
+            var year = dt.Year;
+
+            return new List<List<DateTime>>
+                       {
+                            new List<DateTime>
+                                {
+                                    new DateTime(year, 1, 1),
+                                    new DateTime(year, 2, 1),
+                                    new DateTime(year, 3, 1),
+                                },
+                            new List<DateTime>
+                                {
+                                    new DateTime(year, 4, 1),
+                                    new DateTime(year, 5, 1),
+                                    new DateTime(year, 6, 1),
+                                },
+                            new List<DateTime>
+                               {
+                                   new DateTime(year, 7, 1),
+                                   new DateTime(year, 8, 1),
+                                   new DateTime(year, 9, 1),
+                               },
+                            new List<DateTime>
+                               {
+                                   new DateTime(year, 10, 1),
+                                   new DateTime(year, 11, 1),
+                                   new DateTime(year, 12, 1),
+                               },
+                       };
+        }
+
+        public static int GetMonthNumberOfQuarter(this DateTime dt)
+        {
+            var quarters = dt.GetQuarters();
+            return (from quarter in quarters from month in quarter where month.Month == dt.Month select quarter.IndexOf(month) + 1).FirstOrDefault();
+        }
+
         public static List<DateTime> GetAllDaysInYear(this DateTime dt)
         {
             var allDays = new List<DateTime>();
