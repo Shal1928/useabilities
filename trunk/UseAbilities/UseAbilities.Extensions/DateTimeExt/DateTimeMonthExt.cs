@@ -57,13 +57,6 @@ namespace UseAbilities.Extensions.DateTimeExt
         {
             var result = new List<DateTime>();
 
-            var firstDay = dt.GetStartOfMonth();
-            var lastDay = dt.GetEndOfMonth();
-            //for (var day = firstDay; day <= lastDay; day.AddDays(1))
-            //    result.Add(day);
-
-
-
             var day = dt.GetStartOfMonth();
 
             while (day < dt.GetEndOfMonth())
