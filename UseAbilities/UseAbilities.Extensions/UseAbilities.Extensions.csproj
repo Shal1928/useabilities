@@ -46,6 +46,7 @@
     <Compile Include="EnumExt\DescriptionOfExt.cs" />
     <Compile Include="Helpers\EnumViewWrapper.cs" />
     <Compile Include="Helpers\Interfaces\IEnumViewValue.cs" />
+    <Compile Include="NumberExt\EndOfNumeralsExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
