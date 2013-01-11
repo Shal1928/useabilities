@@ -33,7 +33,7 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ToggleButton}">
                             <TextBlock FontFamily="Verdana" FontWeight="DemiBold">
-                        		<ContentPresenter Margin="2.5" />
+                        		<ContentPresenter />
                             </TextBlock>
                         </ControlTemplate>
                     </Setter.Value>
