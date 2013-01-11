@@ -3,8 +3,9 @@
 
     <Color x:Key="MainGray">#ffAAAAAA</Color>
 
+    <SolidColorBrush x:Key="MainGraySolidBrush" Color="{StaticResource MainGray}" />
     <SolidColorBrush x:Key="MainBackgroundSolidBrush" Color="#ffFFFFFF" />
-
+    
     <LinearGradientBrush x:Key="TopBackgroundGradientBrush" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="{StaticResource MainGray}" Offset="-0.1"/>
         <GradientStop Color="#ffFFFFFF" Offset="0.03"/>
