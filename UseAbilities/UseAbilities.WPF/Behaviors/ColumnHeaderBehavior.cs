@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 using UseAbilities.WPF.Attributes;
@@ -11,12 +12,76 @@ namespace UseAbilities.WPF.Behaviors
     /// </summary>
     public class ColumnHeaderBehavior : Behavior<DataGrid>
     {
+        #region DependencyProperty CellTemplate
+
+        public static readonly DependencyProperty CellTemplateProperty =
+            DependencyProperty.Register("CellTemplate",
+                                        typeof(DataTemplate),
+                                        typeof(ColumnHeaderBehavior),
+                                        new UIPropertyMetadata(null, CellTemplateChanged)
+                                        );
+
+        public DataTemplate CellTemplate
+        {
+            get
+            {
+                return (DataTemplate)GetValue(CellTemplateProperty);
+            }
+            set
+            {
+                SetValue(CellTemplateProperty, value);
+            }
+        }
+
+        private static void CellTemplateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
+        #endregion
+
+        #region DependencyProperty CellEditingTemplate
+
+        public static readonly DependencyProperty CellEditingTemplateProperty =
+            DependencyProperty.Register("CellEditingTemplate",
+                                        typeof(DataTemplate),
+                                        typeof(ColumnHeaderBehavior),
+                                        new UIPropertyMetadata(null, CellEditingTemplateChanged)
+                                        );
+
+        public DataTemplate CellEditingTemplate
+        {
+            get
+            {
+                return (DataTemplate)GetValue(CellEditingTemplateProperty);
+            }
+            set
+            {
+                SetValue(CellEditingTemplateProperty, value);
+            }
+        }
+
+        private static void CellEditingTemplateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //
+        }
+
+        #endregion
+
         protected override void OnAttached()
         {
             AssociatedObject.AutoGeneratingColumn += (sender, e) =>
             {
                 var displayName = GetPropertyDisplayName(e.PropertyDescriptor);
-                if (!string.IsNullOrEmpty(displayName)) e.Column.Header = displayName;
+                if (!string.IsNullOrEmpty(displayName))
+                {
+                   e.Column = new DataGridTemplateColumn
+                                   {
+                                       CellTemplate = CellTemplate,
+                                       CellEditingTemplate = CellEditingTemplate,
+                                       Header = displayName
+                                   };
+                }
                 else e.Cancel = true;
 
                 var displayIndex = GetPropertyDisplayIndex(e.PropertyDescriptor);
