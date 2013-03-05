@@ -75,12 +75,18 @@ namespace UseAbilities.WPF.Behaviors
                 var displayName = GetPropertyDisplayName(e.PropertyDescriptor);
                 if (!string.IsNullOrEmpty(displayName))
                 {
-                   e.Column = new DataGridTemplateColumn
-                                   {
-                                       CellTemplate = CellTemplate,
-                                       CellEditingTemplate = CellEditingTemplate,
-                                       Header = displayName
-                                   };
+                    //var binding = ((DataGridBoundColumn)e.Column).Binding;                 
+
+                    //var dataGridTemplateColumn = new DataGridTemplateColumn
+                    //                {
+                    //                    CellTemplate = CellTemplate,
+                    //                    CellEditingTemplate = CellEditingTemplate,
+                    //                    Header = displayName
+                    //                };
+
+                    //e.Column = dataGridTemplateColumn;
+
+                    e.Column.Header = displayName;
                 }
                 else e.Cancel = true;
 
