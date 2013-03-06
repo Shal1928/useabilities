@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Interactivity;
 using UseAbilities.WPF.Attributes;
 
@@ -75,16 +76,34 @@ namespace UseAbilities.WPF.Behaviors
                 var displayName = GetPropertyDisplayName(e.PropertyDescriptor);
                 if (!string.IsNullOrEmpty(displayName))
                 {
-                    //var binding = ((DataGridBoundColumn)e.Column).Binding;                 
+                    var dataGridTemplateColumn = new DataGridTemplateColumn
+                                                 {
+                                                     CellTemplate = CellTemplate,
+                                                     CellEditingTemplate = CellEditingTemplate,
+                                                     Header = displayName
+                                                 };
 
-                    //var dataGridTemplateColumn = new DataGridTemplateColumn
-                    //                {
-                    //                    CellTemplate = CellTemplate,
-                    //                    CellEditingTemplate = CellEditingTemplate,
-                    //                    Header = displayName
-                    //                };
 
-                    //e.Column = dataGridTemplateColumn;
+                    e.Column = dataGridTemplateColumn;
+
+
+                    //DataGridTemplateColumn dgc = new DataGridTemplateColumn();
+                    //DataTemplate dtm = new DataTemplate();
+
+                    //FrameworkElementFactory btnReset = new FrameworkElementFactory(typeof(Button));
+                    //btnReset.SetValue(Button.ContentProperty, "Restore");
+                    //btnReset.SetValue(Button.ToolTipProperty, "Restore Selected Row");
+                    //btnReset.SetValue(Button.DataContextProperty, new Binding("TableName"));
+
+                    //btnReset.AddHandler(Button.ClickEvent, new RoutedEventHandler(btn_Click));
+
+                    ////set the visual tree of the data template  
+                    //dtm.VisualTree = btnReset;
+                    //dgc.CellTemplate = dtm;
+
+
+
+
 
                     e.Column.Header = displayName;
                 }
