@@ -1,10 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Interactivity;
 using UseAbilities.WPF.Attributes;
+using UseAbilities.WPF.Controls.DataGrid;
 
 namespace UseAbilities.WPF.Behaviors
 { 
@@ -87,19 +89,38 @@ namespace UseAbilities.WPF.Behaviors
                     e.Column = dataGridTemplateColumn;
 
 
-                    //DataGridTemplateColumn dgc = new DataGridTemplateColumn();
-                    //DataTemplate dtm = new DataTemplate();
+                    //DataGrid grid = sender as DataGrid;
+                    //if (grid == null) { return; }
+                    
+                    //ObservableCollection<AutoGenerateColumn> coll = GetColumns(grid);
 
-                    //FrameworkElementFactory btnReset = new FrameworkElementFactory(typeof(Button));
-                    //btnReset.SetValue(Button.ContentProperty, "Restore");
-                    //btnReset.SetValue(Button.ToolTipProperty, "Restore Selected Row");
-                    //btnReset.SetValue(Button.DataContextProperty, new Binding("TableName"));
+                    //foreach (AutoGenerateColumn col in coll)
+                    //{
+                    //    if (e.PropertyName == col.Column)
+                    //    {
+                    //        CustomDataGridTemplateColumn templateColumn =
+                    //                new CustomDataGridTemplateColumn();
+                    //        templateColumn.Header = e.Column.Header;
+                    //        if (col.CellTemplate != null)
+                    //        {
+                    //            templateColumn.CellTemplate = col.CellTemplate;
+                    //        }
+                    //        if (col.CellEditingTemplate != null)
+                    //        {
+                    //            templateColumn.CellEditingTemplate = col.CellEditingTemplate;
+                    //        }
+                    //        if (col.Binding != null)
+                    //        {
+                    //            templateColumn.Binding = col.Binding;
+                    //        }
 
-                    //btnReset.AddHandler(Button.ClickEvent, new RoutedEventHandler(btn_Click));
+                    //        templateColumn.SortMemberPath = e.Column.SortMemberPath;
+                    //        e.Column = templateColumn;
+                    //        return;
+                    //    }
+                    //}
 
-                    ////set the visual tree of the data template  
-                    //dtm.VisualTree = btnReset;
-                    //dgc.CellTemplate = dtm;
+                    //return;
 
 
 

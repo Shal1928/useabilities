@@ -51,6 +51,7 @@
     <Compile Include="Attributes\Display.cs" />
     <Compile Include="Behaviors\ColumnHeaderBehavior.cs" />
     <Compile Include="Bindings\SelfBinding.cs" />
+    <Compile Include="Controls\DataGrid\AutoGenerateColumn.cs" />
     <Compile Include="Converters\Base\ConverterMarkupExtensionBase.cs" />
     <Compile Include="Converters\Base\ConvertorBase.cs" />
     <Compile Include="Converters\Base\MultiConverterBase.cs" />
