@@ -47,6 +47,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttachedBehaviors\IsMousePressedAttachedBehavior.cs" />
     <Compile Include="AttachedProperties\VerifyBehavior.cs" />
     <Compile Include="Attributes\Display.cs" />
     <Compile Include="Behaviors\ColumnHeaderBehavior.cs" />
