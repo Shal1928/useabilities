@@ -51,6 +51,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Controls\FilteringDataGridDictionary\FilteringDataGrid.cs" />
+    <Compile Include="Controls\FilteringDataGridDictionary\HeaderFilterConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Page Include="Styles\Controls\Buttons\LinkRadioButton.xaml">
       <SubType>Designer</SubType>
