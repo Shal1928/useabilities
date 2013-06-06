@@ -12,7 +12,7 @@ namespace UseAbilities.WPF.Converters
     /// Use anyhow for Visibility.Collapsed.
     /// </summary>
     [ValueConversion(typeof(bool), typeof(Visibility))]
-    public class BoolToVisibilityConverter : ConvertorBase<BoolToVisibilityConverter>
+    public class BoolToVisibilityConverter : ConverterBase<BoolToVisibilityConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace UseAbilities.WPF.Converters.Base
 {
-    public abstract class ConvertorBase<T> : ConverterMarkupExtensionBase<T>, IValueConverter where T : class, new()
+    public abstract class ConverterBase<T> : ConverterMarkupExtensionBase<T>, IValueConverter where T : class, new()
     {
         /// <summary>
         /// Must be implemented in inheritor.
