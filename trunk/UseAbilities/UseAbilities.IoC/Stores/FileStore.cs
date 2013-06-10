@@ -1,8 +1,4 @@
-﻿//using System.IO;
-
-//namespace UseAbilities.IoC.Stores
-//{
-//    public class FileStore : StoreBase<string>, IFileStore<string>
+﻿//    public class FileStore : StoreBase<string>, IFileStore<string>
 //    {
 //        public virtual string FileName
 //        {
@@ -28,4 +24,3 @@
 //            set;
 //        }
 //    }
-//}
