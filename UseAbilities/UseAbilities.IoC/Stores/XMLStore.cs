@@ -1,6 +1,4 @@
-﻿//namespace UseAbilities.IoC.Stores
-//{
-//    public class XmlStore<T> : FileStore<T>, IXmlStore<T>
+﻿//    public class XmlStore<T> : FileStore<T>, IXmlStore<T>
 //    {
 //        public override void Save(T storeObject)
 //        {
@@ -13,4 +11,3 @@
 //            return SerializationUtility.Deserialize<T>(FileName);
 //        }
 //    }
-//}
