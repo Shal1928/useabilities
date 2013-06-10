@@ -45,7 +45,15 @@
     <Compile Include="Core\IoC.cs" />
     <Compile Include="Core\RegistredObject.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Helpers\StaticHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stores\FileStore.cs" />
+    <Compile Include="Stores\IFileStore.cs" />
+    <Compile Include="Stores\IReadStore.cs" />
+    <Compile Include="Stores\IStore.cs" />
+    <Compile Include="Stores\IXMLStore.cs" />
+    <Compile Include="Stores\StoreBase.cs" />
+    <Compile Include="Stores\XMLStore.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
