@@ -10,6 +10,7 @@ namespace UseAbilities.WPF.Converters.Test
 
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            //Console.WriteLine(value.ToString());
             return value;
         }
 
