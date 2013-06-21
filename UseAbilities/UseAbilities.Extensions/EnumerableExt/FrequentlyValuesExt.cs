@@ -14,6 +14,13 @@ namespace UseAbilities.Extensions.EnumerableExt
                    .Select(g => g.Key);
         }
 
+        public static IEnumerable<T> FindMissing<T>(this IEnumerable<T> whereRange, IEnumerable<T> knownValues)
+        {
+            var missingRange = new HashSet<T>(whereRange);
+            missingRange.ExceptWith(knownValues);
+            return missingRange;
+        }
+
         //public static T GetFrequentlyValue<T>(this IEnumerable<T> enumerable)
         //{
         //    return enumerable
