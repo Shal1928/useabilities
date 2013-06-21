@@ -124,5 +124,15 @@ namespace UseAbilities.Extensions.DateTimeExt
 
             return allDays;
         }
+
+        public static List<List<DateTime>> SeparateByWeeks(this List<DateTime> dtCollection)
+        {
+            var weeks = new List<List<DateTime>>();
+
+            foreach (var dt in dtCollection.Where(dt => !weeks.Any(w=> w.Contains(dt.Date))))
+                weeks.Add(dt.GetWeek());
+
+            return weeks;
+        }
     }
 }
