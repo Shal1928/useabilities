@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UseAbilities.Extensions.DateTimeExt
 {
@@ -50,6 +51,11 @@ namespace UseAbilities.Extensions.DateTimeExt
         public static bool ThisDateCurrentWeek(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
             return dt.Date >= DateTime.Now.FirstDayCurrentWeek(startOfWeek).Date;
+        }
+
+        public static bool ThisDateBelongsToThisWeek(this DateTime dt, List<DateTime> week)
+        {
+            return week.Any(dateTime => dt.Date == dateTime.Date);
         }
 
         public static bool ThisDateLastWeek(this DateTime dt, DayOfWeek startOfWeek = DayOfWeek.Monday)
