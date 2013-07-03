@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Attributes\Extensions\TypeBindingExt.cs" />
     <Compile Include="Attributes\TypeBinding.cs" />
+    <Compile Include="EventArguments\ValueChangedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\CloneableObject.cs" />
     <Compile Include="Reflection\DynamicBuilder.cs" />
