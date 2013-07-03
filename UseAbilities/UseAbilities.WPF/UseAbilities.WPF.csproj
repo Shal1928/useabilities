@@ -47,6 +47,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\CallMethodAction.cs" />
     <Compile Include="Actions\SetPropertyAction.cs" />
     <Compile Include="AttachedBehaviors\IsMousePressedAttachedBehavior.cs" />
     <Compile Include="AttachedProperties\VerifyBehavior.cs" />
@@ -61,7 +62,9 @@
     <Compile Include="Converters\Test\TestConverter.cs" />
     <Compile Include="Converters\Test\TestMultiConverter.cs" />
     <Compile Include="Custom\ErrorDisplay.cs" />
+    <Compile Include="Helper\MethodDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Triggers\PropertyChangedTrigger.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,9 +85,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Triggers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Notes\XmlnsDefinition.txt" />
   </ItemGroup>
