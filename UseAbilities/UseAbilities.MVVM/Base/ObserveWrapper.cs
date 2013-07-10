@@ -101,14 +101,15 @@ namespace UseAbilities.MVVM.Base
             {
                 var valueField = typeBuilder.DefineField("_" + propertyInfo.Name, propertyInfo.PropertyType, FieldAttributes.Private);
 
-                var property = typeBuilder.DefineProperty(propertyInfo.Name, PropertyAttributes.None, propertyInfo.PropertyType, null);
+                var property = typeBuilder.DefineProperty(propertyInfo.Name, propertyInfo.Attributes, propertyInfo.PropertyType, null);
 
                 //get
-                var valuePropertyGet = typeBuilder.DefineMethod("get_" + propertyInfo.Name, getSetAttributes, null, new[] { propertyInfo.PropertyType });
+                var valuePropertyGet = typeBuilder.DefineMethod("get_" + propertyInfo.Name, getSetAttributes, propertyInfo.PropertyType, null);
 
                 var il = valuePropertyGet.GetILGenerator();
                 il.Emit(OpCodes.Ldarg_0);
-                il.Emit(OpCodes.Ldfld, valueField); //load from field
+                //il.Emit(OpCodes.Ldfld, valueField); //load from field
+                il.Emit(OpCodes.Call, propertyInfo.GetGetMethod());
                 il.Emit(OpCodes.Ret);
 
                 
@@ -116,7 +117,7 @@ namespace UseAbilities.MVVM.Base
 
 
                 //set
-                var valuePropertySet = typeBuilder.DefineMethod("set_" + propertyInfo.Name, getSetAttributes, null, new[] { propertyInfo.PropertyType });
+                var valuePropertySet = typeBuilder.DefineMethod("set_" + propertyInfo.Name, getSetAttributes, typeof(void), new[] { propertyInfo.PropertyType });
 
 
                 //il.Emit(OpCodes.Ldarg_0);
@@ -130,16 +131,16 @@ namespace UseAbilities.MVVM.Base
                 il.Emit(OpCodes.Ldarg_1);
                 
                 
-                Type[] propertyChangedParameters = { typeof(string) };
-                var propertyChanged = observePropertyType.GetMethod("OnPropertyChanged", propertyChangedParameters);
+                //Type[] propertyChangedParameters = { typeof(string) };
+                //var propertyChanged = observePropertyType.GetMethod("OnPropertyChanged", propertyChangedParameters);
                 //var a = propertyChanged;
                 //a.Invoke();
                 
                 il.Emit(OpCodes.Call, propertyInfo.GetSetMethod());
 
-                il.Emit(OpCodes.Ldarg_2);
+                il.Emit(OpCodes.Ldarg_0);
                 il.Emit(OpCodes.Ldstr, propertyInfo.Name);
-                il.Emit(OpCodes.Call, observePropertyType.GetMethod("OnPropertyChanged", propertyChangedParameters));
+                il.Emit(OpCodes.Call, observePropertyType.GetMethod("OnPropertyChanged", new []{ typeof(string) }));
                 
                 il.Emit(OpCodes.Ret);
 
