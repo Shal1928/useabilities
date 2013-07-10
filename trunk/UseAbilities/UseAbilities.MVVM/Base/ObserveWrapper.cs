@@ -31,6 +31,9 @@ namespace UseAbilities.MVVM.Base
 //MyClass myObj = new MyClass();
 //myObj.MyAction = (x) => { Console.WriteLine(x); };
 
+    /// <summary>
+    /// Not tested with complicated get methods
+    /// </summary>
     public class ObserveWrapper 
     {
         //NotifyPropertyChanged
