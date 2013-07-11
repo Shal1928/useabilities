@@ -8,29 +8,18 @@ namespace UseAbilities.MVVM.Base
     /// <summary>
     /// Not tested with complicated get methods
     /// </summary>
-    public class ObserveWrapper 
+    public static class ObserveWrapper
     {
-        private AssemblyBuilder _assemblyBuilder;
-        private string _name;
+        #region Private Fields
 
-        private TypeBuilder GetSeedClassBuilder(Type baseClass)
-        {
-            _name = string.Format("{0}_Seed", baseClass.Name);
-            var asmName = new AssemblyName(_name);
-            _assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.RunAndSave);
-            var mb = _assemblyBuilder.DefineDynamicModule(_name, _name + ".dll");
+        private static AssemblyBuilder _assemblyBuilder;
+        private static string _moduleName;
+        //private static string _assemblyFileName;
 
-            const TypeAttributes typeAttributes = TypeAttributes.Public |
-                                                  TypeAttributes.Class |
-                                                  TypeAttributes.AutoClass |
-                                                  TypeAttributes.AnsiClass |
-                                                  TypeAttributes.BeforeFieldInit |
-                                                  TypeAttributes.AutoLayout;
+        #endregion
 
-            return mb.DefineType(_name, typeAttributes, baseClass);
-        }
-
-        public Type Resolve(Type observePropertyType)
+        
+        public static Type Wrap(Type observePropertyType)
         {
             var propertyInfoCollection = observePropertyType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
@@ -71,11 +60,47 @@ namespace UseAbilities.MVVM.Base
                 property.SetSetMethod(valuePropertySet);
             }
 
+            //_assemblyBuilder.Save(_assemblyFileName);
 
-            var resultType = typeBuilder.CreateType();
-            _assemblyBuilder.Save(_name + ".dll");
-
-            return resultType;
+            return typeBuilder.CreateType();
         }
-    }
+
+
+        #region Private Methods
+
+        private static void Initilaize(Type baseClass)
+        {
+            //const string extension = "dll";
+            const string suffix = "_Seed";
+
+            _moduleName = string.Format("{0}{1}", baseClass.Name, suffix);
+            //_assemblyFileName = Path.Combine(_moduleName, extension);
+
+            //var assemblyName = Debugger.IsAttached && File.Exists(_assemblyFileName)
+            //    ? Assembly.LoadFile(_assemblyFileName).GetName()
+            //    : new AssemblyName(_moduleName);
+            var assemblyName = new AssemblyName(_moduleName);
+
+            //_assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.RunAndSave);
+            _assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+        }
+
+        private static TypeBuilder GetSeedClassBuilder(Type baseClass)
+        {
+            Initilaize(baseClass);
+            //var moduleBuilder = _assemblyBuilder.DefineDynamicModule(_moduleName, _assemblyFileName);
+            var moduleBuilder = _assemblyBuilder.DefineDynamicModule(_moduleName);
+
+            const TypeAttributes typeAttributes = TypeAttributes.Public |
+                                                  TypeAttributes.Class |
+                                                  TypeAttributes.AutoClass |
+                                                  TypeAttributes.AnsiClass |
+                                                  TypeAttributes.BeforeFieldInit |
+                                                  TypeAttributes.AutoLayout;
+
+            return moduleBuilder.DefineType(_moduleName, typeAttributes, baseClass);
+        }
+
+        #endregion
+    }   
 }
