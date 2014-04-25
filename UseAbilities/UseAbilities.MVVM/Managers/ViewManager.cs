@@ -3,20 +3,36 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
+using UseAbilities.Extensions.Dictionaries;
 using UseAbilities.MVVM.Base;
 
 namespace UseAbilities.MVVM.Managers
 {
-    public static class ViewManager
+    public class ViewManager
     {
         #region Data
 
-        private static readonly Dictionary<Type, Type> _mapping = new Dictionary<Type, Type>();
-        private static readonly List<Window> _openedViews = new List<Window>();
+        private readonly Dictionary<Type, Type> _relations = new Dictionary<Type, Type>();
+        private readonly List<Window> _openedViews = new List<Window>();
 
         #endregion
 
-        public static void OnViewModelsCoolectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        #region Singleton implementation
+
+        protected ViewManager()
+        {
+            //
+        }
+
+        private static readonly ViewManager SingleInstance = new ViewManager();
+        public static ViewManager Instance
+        {
+            get { return SingleInstance; }
+        }
+
+        #endregion
+
+        public void OnViewModelsCoolectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             switch (e.Action)
             {
@@ -44,11 +60,11 @@ namespace UseAbilities.MVVM.Managers
             }
         }
 
-        public static void ShowView(ViewModelBase viewModel2Show)
+        private void ShowView(ViewModelBase viewModel2Show)
         {
-            if (!_mapping.ContainsKey(viewModel2Show.GetType())) return;
+            if (!_relations.ContainsKey(viewModel2Show.GetType())) return;
 
-            var newWindowType = _mapping[viewModel2Show.GetType()];
+            var newWindowType = _relations[viewModel2Show.GetType()];
             var newWindow = newWindowType.GetConstructor(Type.EmptyTypes).Invoke(Type.EmptyTypes) as Window;
 
             if (newWindow == null) return;
@@ -65,7 +81,7 @@ namespace UseAbilities.MVVM.Managers
             newWindow.Show();
         }
 
-        private static void CloseView(ViewModelBase viewModel2Close)
+        private void CloseView(ViewModelBase viewModel2Close)
         {
             foreach (var openedView in _openedViews.Where(openedView => openedView.DataContext == viewModel2Close))
             {
@@ -75,24 +91,27 @@ namespace UseAbilities.MVVM.Managers
             }
         }
 
-        private static void CloseAllViews()
+        private void CloseAllViews()
         {
             foreach (var openedView in _openedViews)
                 openedView.Close();
             _openedViews.Clear();
         }
 
-        public static void RegisterViewViewModelRelation(Type viewModelType, Type viewType)
+        public virtual void RegisterRelation<TViewModel, TView>()
         {
-            if (_mapping.ContainsKey(viewModelType))
-                _mapping[viewModelType] = viewType;
-            else _mapping.Add(viewModelType, viewType);
+            _relations.Put(typeof(TViewModel), typeof(TView));
         }
 
-        public static void RegisterViewViewModelRelations(Dictionary<Type, Type> relations)
+        public virtual void RegisterRelation(Type viewModelType, Type viewType)
+        {
+            _relations.Put(viewModelType, viewType);
+        }
+
+        public void RegisterRelations(Dictionary<Type, Type> relations)
         {
             foreach (var keyType in relations.Keys)
-                RegisterViewViewModelRelation(keyType, relations[keyType]);
+                RegisterRelation(keyType, relations[keyType]);
         }
     }
 }
