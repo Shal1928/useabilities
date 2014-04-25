@@ -31,20 +31,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationHelper\SingleInstanceHelper.cs" />
     <Compile Include="Core\Enums\ProductType.cs" />
     <Compile Include="Core\Enums\SystemMetrics.cs" />
     <Compile Include="Core\Kernel32.cs" />
     <Compile Include="Core\Structs\OSVERSIONINFOEX.cs" />
     <Compile Include="Core\User32.cs" />
+    <Compile Include="PrinterHelper\RawPrinterHelper.cs" />
     <Compile Include="Structs\SystemVersion.cs" />
     <Compile Include="Info\OSdetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
