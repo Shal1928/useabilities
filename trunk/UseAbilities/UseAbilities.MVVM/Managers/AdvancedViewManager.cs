@@ -15,6 +15,7 @@ namespace UseAbilities.MVVM.Managers
         private AdvancedViewManager()
         {
             WrappedViewModels = new Dictionary<Type, Type>();
+            ViewModelManager.ActiveViewModels.CollectionChanged += OnViewModelsCoolectionChanged;
         }
 
         private static readonly AdvancedViewManager SingleInstance = new AdvancedViewManager();
