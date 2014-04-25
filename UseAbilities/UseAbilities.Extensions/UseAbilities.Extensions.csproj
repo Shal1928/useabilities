@@ -31,8 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,12 +46,17 @@
     <Compile Include="DateTimeExt\DateTimeWeekExt.cs" />
     <Compile Include="DateTimeExt\DateTimeYearExt.cs" />
     <Compile Include="Dictionaries\DicExt.cs" />
+    <Compile Include="EnumerableExt\EnumerableBaseExt.cs" />
     <Compile Include="EnumerableExt\FrequentlyValuesExt.cs" />
     <Compile Include="EnumExt\DescriptionOfExt.cs" />
     <Compile Include="Helpers\EnumViewWrapper.cs" />
     <Compile Include="Helpers\Interfaces\IEnumViewValue.cs" />
     <Compile Include="NumberExt\EndOfNumeralsExt.cs" />
+    <Compile Include="ObjectExt\ObjectBaseExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringExt\StringBaseExt.cs" />
+    <Compile Include="StringExt\StringColorExt.cs" />
+    <Compile Include="StringExt\StringDecoderExt.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
