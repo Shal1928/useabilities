@@ -2,6 +2,6 @@
 {
     public static class StaticHelper
     {
-        public static Core.IoC IoCcontainer = new Core.IoC();
+        //public static Core.IoC IoCcontainer = new Core.IoC();
     }
 }
