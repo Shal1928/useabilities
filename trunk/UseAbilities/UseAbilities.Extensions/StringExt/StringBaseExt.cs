@@ -6,7 +6,8 @@ namespace UseAbilities.Extensions.StringExt
     public static class StringBaseExt
     {
         public static readonly string NEW_LINE = "\n";
-
+        public static readonly string TAB = "\t";
+        
         public static bool IsNullOrEmptyOrSpaces(this string value)
         {
             return String.IsNullOrWhiteSpace(value) || value.IsEmpty();
@@ -26,6 +27,15 @@ namespace UseAbilities.Extensions.StringExt
         {
             var newLineIndex = value.IndexOfNext(NEW_LINE);
             return value.Copy(newLineIndex, value.IndexOfLast());
+        }
+
+        public static string GetBetweenTabs(this string value)
+        {
+            var firstTabIndex = value.IndexOf(TAB, StringComparison.Ordinal);
+            var temp = value.Remove(firstTabIndex, 1);
+            var nextTabIndex = temp.IndexOf(TAB, StringComparison.Ordinal);
+
+            return value.Copy(firstTabIndex, nextTabIndex);
         }
 
         public static int IndexOfNext(this string value, string item, StringComparison comparison = StringComparison.Ordinal)
