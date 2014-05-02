@@ -1,0 +1,15 @@
+﻿<ResourceDictionary x:Class="UseAbilities.Visual.Colors.ColorsDic"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--<Color x:Key="">#ff</Color>-->
+
+    <Color x:Key="Azure">#ff007FFF</Color>
+    <SolidColorBrush x:Key="AzureSB" Color="{StaticResource Azure}" />
+    
+    <Color x:Key="Skiey">#ff7FC7FF</Color>
+    <SolidColorBrush x:Key="SkieySB" Color="{StaticResource Skiey}" />
+    
+    
+    
+</ResourceDictionary>

@@ -1,0 +1,48 @@
+﻿<ResourceDictionary x:Class=" UseAbilities.Visual.Styles.BaseAnimationBehaviorDic"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:UseAbilities.WPF.Converters;assembly=UseAbilities.WPF">
+
+    <Storyboard x:Key="FromPaleToReachStoryBoard">
+        <DoubleAnimation FillBehavior="HoldEnd" From="0.9" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="0:0:0.3"/>
+        <DoubleAnimation FillBehavior="HoldEnd" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Duration="0:0:0.3" />
+        <DoubleAnimation FillBehavior="HoldEnd" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Duration="0:0:0.3" />
+    </Storyboard>
+
+    <Storyboard x:Key="FromPaleToReachStoryBoard2">
+        <DoubleAnimation FillBehavior="HoldEnd" AutoReverse="True" From="0.9" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="0:0:0.3"/>
+        <DoubleAnimation FillBehavior="HoldEnd" AutoReverse="True" To="1.05" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Duration="0:0:0.3" />
+        <DoubleAnimation FillBehavior="HoldEnd" AutoReverse="True" To="1.05" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Duration="0:0:0.3" />
+    </Storyboard>
+    
+    <Storyboard x:Key="FromReachToPaleStoryBoard">
+        <DoubleAnimation FillBehavior="HoldEnd" From="1" To="0.9" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="0:0:0.3" />
+        <DoubleAnimation FillBehavior="HoldEnd" To="0.9" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Duration="0:0:0.3" />
+        <DoubleAnimation FillBehavior="HoldEnd" To="0.9" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Duration="0:0:0.3" />
+    </Storyboard>
+
+    <Style x:Key="MouseHoverBehaviorStyle" TargetType="{x:Type FrameworkElement}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform CenterX="{Binding ActualWidth, Converter={Converters:DivideDoubleValueConverter},  RelativeSource={RelativeSource FindAncestor, FrameworkElement, 1}}" 
+                                CenterY="{Binding ActualHeight, Converter={Converters:DivideDoubleValueConverter},  RelativeSource={RelativeSource FindAncestor, FrameworkElement, 1}}"
+                                ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard Storyboard="{StaticResource FromReachToPaleStoryBoard}" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard Storyboard="{StaticResource FromPaleToReachStoryBoard}" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                <BeginStoryboard Storyboard="{StaticResource FromPaleToReachStoryBoard2}" />
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>
+    
