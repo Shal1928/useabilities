@@ -14,6 +14,11 @@ namespace UseAbilities.WPF.Converters
     [ValueConversion(typeof(bool), typeof(Visibility))]
     public class BoolToVisibilityConverter : ConverterBase<BoolToVisibilityConverter>
     {
+        public BoolToVisibilityConverter()
+        {
+            //
+        }
+
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!(value is bool)) throw new ArgumentException("value is not bool");
