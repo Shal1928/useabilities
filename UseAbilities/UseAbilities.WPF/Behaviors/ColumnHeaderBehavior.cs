@@ -20,10 +20,13 @@ namespace UseAbilities.WPF.Behaviors
                 else e.Cancel = true;
 
                 var displayIndex = GetPropertyDisplayIndex(e.PropertyDescriptor);
-                if (displayIndex >= AssociatedObject.Columns.Count) return;
 
-                if (displayIndex >= 0) e.Column.DisplayIndex = displayIndex;
-                else e.Cancel = true;
+                if (displayIndex < AssociatedObject.Columns.Count)
+                    if (displayIndex >= 0) e.Column.DisplayIndex = displayIndex;
+                    else e.Cancel = true;
+
+                var width = GetPropertyWidth(e.PropertyDescriptor);
+                e.Column.Width = width;
             };
         }
 
@@ -75,6 +78,31 @@ namespace UseAbilities.WPF.Behaviors
             }
 
             return -1;
+        }
+
+        public virtual DataGridLength GetPropertyWidth(object descriptor)
+        {
+            var pd = descriptor as PropertyDescriptor;
+            if (pd != null)
+            {
+                var attr = pd.Attributes[typeof(Display)] as Display;
+                if ((attr != null) && (!Equals(attr, DisplayNameAttribute.Default))) return attr.Width;
+            }
+            else
+            {
+                var pi = descriptor as PropertyInfo;
+                if (pi != null)
+                {
+                    var attrs = pi.GetCustomAttributes(typeof(Display), true);
+                    foreach (var att in attrs)
+                    {
+                        var attribute = att as Display;
+                        if ((attribute != null) && (!Equals(attribute, DisplayNameAttribute.Default))) return attribute.Width;
+                    }
+                }
+            }
+
+            return DataGridLength.SizeToHeader;
         }
     }
 }
