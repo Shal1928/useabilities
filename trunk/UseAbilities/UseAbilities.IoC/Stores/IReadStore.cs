@@ -3,6 +3,10 @@
     public interface IReadStore<T>
     {
         T Load();
-        T Load(int key);
+    }
+
+    public interface IKeyReadStore<T, TKey> : IReadStore<T>
+    {
+        T Load(TKey key);
     }
 }
