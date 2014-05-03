@@ -9,4 +9,9 @@
     {
         void Save(T storeObject, TKey key);
     }
+
+    public interface IFileStore<T> : IFileReadStore<T>
+    {
+        //
+    }
 }

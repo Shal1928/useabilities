@@ -2,8 +2,15 @@
 
 namespace UseAbilities.IoC.Stores.Impl
 {
-    public class FileStore : AFileStore<byte[]>
+    public class BytesStore : FileStoreBase<byte[]>
     {
+        private FileMode _saveFileMode = FileMode.Create;
+        public virtual FileMode SaveFileMode
+        {
+            get { return _saveFileMode; }
+            set { _saveFileMode = value; }
+        }
+
         public override string FileName { get; set; }
 
         public override byte[] Load()
@@ -44,7 +51,7 @@ namespace UseAbilities.IoC.Stores.Impl
 
         public override void Save(byte[] storeObject, string fileName)
         {
-            using (var fileStream = new FileStream(fileName, FileMode.Create))
+            using (var fileStream = new FileStream(fileName, SaveFileMode))
             {
                 fileStream.Write(storeObject, 0, storeObject.Length);
             }

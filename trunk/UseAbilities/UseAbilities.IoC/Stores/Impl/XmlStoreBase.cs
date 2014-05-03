@@ -3,7 +3,7 @@ using UseAbilities.XML.Serialization;
 
 namespace UseAbilities.IoC.Stores.Impl
 {
-    public class XmlStore<T> : AFileStore<T>
+    public class XmlStoreBase<T> : FileStoreBase<T>
     {
         public override string FileName { get; set; }
 
