@@ -9,4 +9,9 @@
     {
         T Load(TKey key);
     }
+
+    public interface IFileReadStore<T> : IKeyReadStore<T, string>
+    {
+        //
+    }
 }
