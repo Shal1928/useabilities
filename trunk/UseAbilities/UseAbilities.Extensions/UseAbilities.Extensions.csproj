@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BytesExt\BaseByteExt.cs" />
     <Compile Include="DateTimeExt\DateTimeMonthExt.cs" />
     <Compile Include="DateTimeExt\DateTimeWeekExt.cs" />
     <Compile Include="DateTimeExt\DateTimeYearExt.cs" />
