@@ -49,7 +49,6 @@
     <Compile Include="Helpers\IoCManager.cs" />
     <Compile Include="Helpers\StaticHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stores\ByteFileStoreBase.cs" />
     <Compile Include="Stores\FileStoreBase.cs" />
     <Compile Include="Stores\Impl\BytesStore.cs" />
     <Compile Include="Stores\IReadStore.cs" />
