@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
+using UseAbilities.Extensions.ObjectExt;
 using UseAbilities.WPF.Attributes;
 
 namespace UseAbilities.WPF.Behaviors
@@ -15,28 +17,37 @@ namespace UseAbilities.WPF.Behaviors
         {
             AssociatedObject.AutoGeneratingColumn += (sender, e) =>
             {
-                var displayName = GetPropertyDisplayName(e.PropertyDescriptor);
+                if (e.PropertyType == typeof(DateTime))
+                {
+                    var dataGridTextColumn = e.Column as DataGridTextColumn;
+                    if (dataGridTextColumn != null)
+                    {
+                        dataGridTextColumn.Binding.StringFormat = GetAttributeProperty<string>(e.PropertyDescriptor, "Format");
+                    }
+                }
+
+                var displayName = GetAttributeProperty<string>(e.PropertyDescriptor, "DisplayName");
                 if (!string.IsNullOrEmpty(displayName)) e.Column.Header = displayName;
                 else e.Cancel = true;
 
-                var displayIndex = GetPropertyDisplayIndex(e.PropertyDescriptor);
+                var displayIndex = GetAttributeProperty<int>(e.PropertyDescriptor, "DisplayIndex", -1);
 
                 if (displayIndex < AssociatedObject.Columns.Count)
                     if (displayIndex >= 0) e.Column.DisplayIndex = displayIndex;
                     else e.Cancel = true;
 
-                var width = GetPropertyWidth(e.PropertyDescriptor);
+                var width = GetAttributeProperty<DataGridLength>(e.PropertyDescriptor, "Width", DataGridLength.SizeToHeader);
                 e.Column.Width = width;
             };
         }
 
-        public virtual string GetPropertyDisplayName(object descriptor)
+        protected virtual T GetAttributeProperty<T>(object descriptor, string propertyName, object defaultValue = null)
         {
             var pd = descriptor as PropertyDescriptor;
             if (pd != null)
             {
                 var attr = pd.Attributes[typeof(DisplayNameAttribute)] as DisplayNameAttribute;
-                if ((attr != null) && (!Equals(attr, DisplayNameAttribute.Default))) return attr.DisplayName;
+                if ((attr != null) && (!Equals(attr, DisplayNameAttribute.Default))) return attr.GetValue<T>(propertyName);
             }
             else
             {
@@ -47,62 +58,12 @@ namespace UseAbilities.WPF.Behaviors
                     foreach (var att in attrs)
                     {
                         var attribute = att as DisplayNameAttribute;
-                        if ((attribute != null) && (!Equals(attribute, DisplayNameAttribute.Default))) return attribute.DisplayName;
+                        if ((attribute != null) && (!Equals(attribute, DisplayNameAttribute.Default))) return attribute.GetValue<T>(propertyName);
                     }
                 }
             }
 
-            return null;
-        }
-
-        public virtual int GetPropertyDisplayIndex(object descriptor)
-        {
-            var pd = descriptor as PropertyDescriptor;
-            if (pd != null)
-            {
-                var attr = pd.Attributes[typeof(Display)] as Display;
-                if ((attr != null) && (!Equals(attr, DisplayNameAttribute.Default))) return attr.DisplayIndex;
-            }
-            else
-            {
-                var pi = descriptor as PropertyInfo;
-                if (pi != null)
-                {
-                    var attrs = pi.GetCustomAttributes(typeof(Display), true);
-                    foreach (var att in attrs)
-                    {
-                        var attribute = att as Display;
-                        if ((attribute != null) && (!Equals(attribute, DisplayNameAttribute.Default))) return attribute.DisplayIndex;
-                    }
-                }
-            }
-
-            return -1;
-        }
-
-        public virtual DataGridLength GetPropertyWidth(object descriptor)
-        {
-            var pd = descriptor as PropertyDescriptor;
-            if (pd != null)
-            {
-                var attr = pd.Attributes[typeof(Display)] as Display;
-                if ((attr != null) && (!Equals(attr, DisplayNameAttribute.Default))) return attr.Width;
-            }
-            else
-            {
-                var pi = descriptor as PropertyInfo;
-                if (pi != null)
-                {
-                    var attrs = pi.GetCustomAttributes(typeof(Display), true);
-                    foreach (var att in attrs)
-                    {
-                        var attribute = att as Display;
-                        if ((attribute != null) && (!Equals(attribute, DisplayNameAttribute.Default))) return attribute.Width;
-                    }
-                }
-            }
-
-            return DataGridLength.SizeToHeader;
+            return (T) defaultValue;
         }
     }
 }
