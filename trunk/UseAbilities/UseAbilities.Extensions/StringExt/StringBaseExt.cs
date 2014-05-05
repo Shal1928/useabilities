@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Text;
 using UseAbilities.Extensions.EnumerableExt;
 
 namespace UseAbilities.Extensions.StringExt
@@ -9,7 +9,12 @@ namespace UseAbilities.Extensions.StringExt
         public static readonly string NEW_LINE = "\n";
         public static readonly string NEW_LINE_R = "\r";
         public static readonly string TAB = "\t";
-        
+
+        public static string Paste(this string value, params object[] parameters)
+        {
+            return String.Format(value, parameters);
+        }
+
         public static bool IsNullOrEmptyOrSpaces(this string value)
         {
             return String.IsNullOrWhiteSpace(value) || value.IsEmpty();
@@ -85,6 +90,22 @@ namespace UseAbilities.Extensions.StringExt
             }
 
             return value;
+        }
+
+        public static string GenerateSymbols(string symbol, int count)
+        {
+            var sb = new StringBuilder();
+            for (var i = 1; i < count; i++)
+                sb.Append(symbol);
+
+            return sb.ToString();
+        }
+
+        public static string ReplaceFirst(this string value, string oldValue, string newValue)
+        {
+            var beginIndex = value.IndexOf(oldValue, StringComparison.OrdinalIgnoreCase);
+
+            return value.Remove(beginIndex, oldValue.Length).Insert(beginIndex, newValue);
         }
     }
 }

@@ -18,5 +18,10 @@ namespace UseAbilities.Extensions.EnumerableExt
         {
             return enumerable == null || !enumerable.GetEnumerator().MoveNext();
         }
+
+        public static int LastIndex(this ICollection collection)
+        {
+            return collection.Count - 1;
+        }
     }
 }
