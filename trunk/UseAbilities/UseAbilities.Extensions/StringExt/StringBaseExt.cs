@@ -6,9 +6,20 @@ namespace UseAbilities.Extensions.StringExt
 {
     public static class StringBaseExt
     {
+        #region Static Elements
         public static readonly string NEW_LINE = "\n";
         public static readonly string NEW_LINE_R = "\r";
         public static readonly string TAB = "\t";
+
+        public static string GenerateSymbols(string symbol, int count)
+        {
+            var sb = new StringBuilder();
+            for (var i = 1; i < count; i++)
+                sb.Append(symbol);
+
+            return sb.ToString();
+        }
+        #endregion
 
         public static string Paste(this string value, params object[] parameters)
         {
@@ -92,20 +103,24 @@ namespace UseAbilities.Extensions.StringExt
             return value;
         }
 
-        public static string GenerateSymbols(string symbol, int count)
-        {
-            var sb = new StringBuilder();
-            for (var i = 1; i < count; i++)
-                sb.Append(symbol);
-
-            return sb.ToString();
-        }
-
         public static string ReplaceFirst(this string value, string oldValue, string newValue)
         {
             var beginIndex = value.IndexOf(oldValue, StringComparison.OrdinalIgnoreCase);
 
             return value.Remove(beginIndex, oldValue.Length).Insert(beginIndex, newValue);
+        }
+
+        public static string ClearEdges(this string value, string edge)
+        {
+            return value.ClearEdges(edge, edge);
+        }
+
+        public static string ClearEdges(this string value, string leftEdge, string rightEdge)
+        {
+            if (value.Substring(0, leftEdge.Length) == leftEdge) value = value.Remove(0, leftEdge.Length);
+            if (value.Length >= rightEdge.Length && value.Substring(value.Length - rightEdge.Length, rightEdge.Length) == rightEdge) value = value.Remove(value.Length - rightEdge.Length, rightEdge.Length);
+
+            return value;
         }
     }
 }
