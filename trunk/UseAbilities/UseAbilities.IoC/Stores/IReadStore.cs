@@ -12,6 +12,7 @@
 
     public interface IFileReadStore<T> : IKeyReadStore<T, string>
     {
-        //
+        void SetFileName(string fileName);
+        string GetFileName();
     }
 }

@@ -3,13 +3,11 @@ using UseAbilities.XML.Serialization;
 
 namespace UseAbilities.IoC.Stores.Impl
 {
-    public class XmlStoreBase<T> : FileStoreBase<T>
+    public class XmlStoreBase<T> : AbstractFileStore<T>
     {
-        public override string FileName { get; set; }
-
         public override T Load()
         {
-            return Load(FileName);
+            return Load(GetFileName());
         }
 
         public override T Load(string fileName)
@@ -21,7 +19,7 @@ namespace UseAbilities.IoC.Stores.Impl
 
         public override void Save(T storeObject)
         {
-            Save(storeObject, FileName);
+            Save(storeObject, GetFileName());
         }
 
         public override void Save(T storeObject, string fileName)

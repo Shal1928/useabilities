@@ -2,7 +2,7 @@
 
 namespace UseAbilities.IoC.Stores.Impl
 {
-    public class BytesStore : FileStoreBase<byte[]>
+    public class BytesStore : AbstractFileStore<byte[]>
     {
         private FileMode _saveFileMode = FileMode.Create;
         public virtual FileMode SaveFileMode
@@ -11,11 +11,10 @@ namespace UseAbilities.IoC.Stores.Impl
             set { _saveFileMode = value; }
         }
 
-        public override string FileName { get; set; }
 
         public override byte[] Load()
         {
-            return Load(FileName);
+            return Load(GetFileName());
         }
 
         public override byte[] Load(string fileName)
@@ -46,7 +45,7 @@ namespace UseAbilities.IoC.Stores.Impl
 
         public override void Save(byte[] storeObject)
         {
-            Save(storeObject, FileName);
+            Save(storeObject, GetFileName());
         }
 
         public override void Save(byte[] storeObject, string fileName)
