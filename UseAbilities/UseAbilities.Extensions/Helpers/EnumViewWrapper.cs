@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UseAbilities.Extensions.EnumExt;
 using UseAbilities.Extensions.Helpers.Interfaces;
 
@@ -40,15 +41,9 @@ namespace UseAbilities.Extensions.Helpers
             Value = value;
         }
 
-        public static List<EnumViewWrapper<T>> GetWrappedCollection()
+        public static IEnumerable<EnumViewWrapper<T>> GetWrappedCollection()
         {
-            var resultCollection = new List<EnumViewWrapper<T>>();
-
-            foreach (var enumValue in typeof(T).GetEnumValues())
-                resultCollection.Add(new EnumViewWrapper<T>((Enum)enumValue));
-
-
-            return resultCollection;
+            return (from object enumValue in typeof (T).GetEnumValues() select new EnumViewWrapper<T>((Enum) enumValue)).ToList();
         }
     }
 
