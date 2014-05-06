@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using UseAbilities.Extensions.EnumerableExt;
+using UseAbilities.Extensions.ObjectExt;
 
 namespace UseAbilities.Extensions.StringExt
 {
@@ -117,8 +118,8 @@ namespace UseAbilities.Extensions.StringExt
 
         public static string ClearEdges(this string value, string leftEdge, string rightEdge)
         {
-            if (value.Substring(0, leftEdge.Length) == leftEdge) value = value.Remove(0, leftEdge.Length);
-            if (value.Length >= rightEdge.Length && value.Substring(value.Length - rightEdge.Length, rightEdge.Length) == rightEdge) value = value.Remove(value.Length - rightEdge.Length, rightEdge.Length);
+            if (leftEdge.NotNull() && value.Substring(0, leftEdge.Length) == leftEdge) value = value.Remove(0, leftEdge.Length);
+            if (rightEdge.NotNull() && value.Length >= rightEdge.Length && value.Substring(value.Length - rightEdge.Length, rightEdge.Length) == rightEdge) value = value.Remove(value.Length - rightEdge.Length, rightEdge.Length);
 
             return value;
         }
