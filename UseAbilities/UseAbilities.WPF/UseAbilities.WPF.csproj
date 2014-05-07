@@ -60,6 +60,7 @@
     <Compile Include="Converters\Base\MultiConverterBase.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\DivideDoubleValueConverter.cs" />
+    <Compile Include="Converters\SplitStringToArrayConverter.cs" />
     <Compile Include="Converters\Test\TestConverter.cs" />
     <Compile Include="Converters\Test\TestMultiConverter.cs" />
     <Compile Include="Converters\TimeSpanToDateTimeConverter.cs" />

@@ -8,6 +8,11 @@ namespace UseAbilities.WPF.Converters
     [ValueConversion(typeof(TimeSpan), typeof(DateTime))]
     public class TimeSpanToDateTimeConverter : ConverterBase<TimeSpanToDateTimeConverter>
     {
+        public TimeSpanToDateTimeConverter()
+        {
+            //
+        }
+
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!(value is DateTime)) throw new ArgumentException("value is not DateTime");
@@ -26,6 +31,11 @@ namespace UseAbilities.WPF.Converters
     [ValueConversion(typeof(DateTime), typeof(TimeSpan))]
     public class DateTimeTimeSpanConverter : ConverterBase<DateTimeTimeSpanConverter>
     {
+        public DateTimeTimeSpanConverter()
+        {
+            //
+        }
+
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!(value is TimeSpan)) throw new ArgumentException("value is not TimeSpan");
