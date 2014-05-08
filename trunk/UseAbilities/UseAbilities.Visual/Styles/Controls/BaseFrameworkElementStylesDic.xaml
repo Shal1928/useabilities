@@ -1,0 +1,18 @@
+﻿<ResourceDictionary x:Class="UseAbilities.Visual.Styles.Controls.BaseFrameworkElementStylesDic"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UseAbilities.Visual;component/Styles/BaseAnimationBehaviorDic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BaseFrameworkelementStyle" TargetType="{x:Type FrameworkElement}" BasedOn="{StaticResource MouseHoverBehaviorStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsEnabled}" Value="True">
+                <Setter Property="Opacity" Value="1" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+                <Setter Property="Opacity" Value="0.6" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
