@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Windows.Data;
-using UseAbilities.Extensions.EnumerableExt;
 using UseAbilities.Extensions.ObjectExt;
 using UseAbilities.Extensions.StringExt;
 using UseAbilities.WPF.Converters.Base;
@@ -12,9 +10,9 @@ using UseAbilities.WPF.Converters.Base;
 namespace UseAbilities.WPF.Converters
 {
     //[ValueConversion(typeof(string[]), typeof(string))]
-    public class SplitStringToArrayConverter : ConverterBase<SplitStringToArrayConverter>
+    public class SplitStringToListConverter : ConverterBase<SplitStringToListConverter>
     {
-        public SplitStringToArrayConverter()
+        public SplitStringToListConverter()
         {
             //
         }
