@@ -2,7 +2,10 @@
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Converters="clr-namespace:UseAbilities.WPF.Converters;assembly=UseAbilities.WPF">
-
+    <!--<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UseAbilities.Visual;component/Styles/Controls/BaseFrameworkElementStylesDic.xaml" />
+    </ResourceDictionary.MergedDictionaries>-->
+    
     <Storyboard x:Key="FromPaleToReachStoryBoard">
         <DoubleAnimation FillBehavior="HoldEnd" From="0.9" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="0:0:0.3"/>
         <DoubleAnimation FillBehavior="HoldEnd" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Duration="0:0:0.3" />
