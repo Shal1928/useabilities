@@ -60,12 +60,14 @@
     <Compile Include="Converters\Base\MultiConverterBase.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\DivideDoubleValueConverter.cs" />
-    <Compile Include="Converters\SplitStringToArrayConverter.cs" />
+    <Compile Include="Converters\SplitStringToListConverter.cs" />
     <Compile Include="Converters\Test\TestConverter.cs" />
     <Compile Include="Converters\Test\TestMultiConverter.cs" />
     <Compile Include="Converters\TimeSpanToDateTimeConverter.cs" />
     <Compile Include="Custom\ErrorDisplay.cs" />
+    <Compile Include="Extensions\BaseStyleExt.cs" />
     <Compile Include="Helper\MethodDescriptor.cs" />
+    <Compile Include="MarkupExtensions\MultiStyle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triggers\PropertyChangedTrigger.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
