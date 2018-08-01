@@ -45,7 +45,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationHelper\HotKeyHelper.cs" />
     <Compile Include="ApplicationHelper\SingleInstanceHelper.cs" />
+    <Compile Include="Core\Enums\KeyModifier.cs" />
     <Compile Include="Core\Enums\ProductType.cs" />
     <Compile Include="Core\Enums\SystemMetrics.cs" />
     <Compile Include="Core\Kernel32.cs" />

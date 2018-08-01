@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAbilities.Extensions", "UseAbilities.Extensions\UseAbilities.Extensions.csproj", "{C3286D0A-9826-4681-AB99-E0056239D253}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAbilities.IoC", "UseAbilities.IoC\UseAbilities.IoC.csproj", "{B855AE04-A938-472C-BA0A-1A546D5A3FEB}"
@@ -44,11 +46,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.9.4g - Feb 7, 2012", "2.9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAbilities.DotNet", "UseAbilities.DotNet\UseAbilities.DotNet.csproj", "{6E37988B-27F8-4DCF-8CDA-AA585AAADDE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F8C379B0-D6E4-40FB-A914-DA5DE2D653EB}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -156,5 +159,9 @@ Global
 		{41CF6FC9-45FA-4797-B935-DD33E8078ACB} = {0432E800-A53C-490E-91B4-7C5E7D61233E}
 		{13291B55-D173-4C07-874E-56456920D27D} = {0432E800-A53C-490E-91B4-7C5E7D61233E}
 		{1DA7FA46-F6EB-4D2D-8354-64B948563959} = {13291B55-D173-4C07-874E-56456920D27D}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

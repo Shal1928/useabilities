@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using UseAbilities.System.Core.Enums;
 
 namespace UseAbilities.System.Core
@@ -14,5 +15,13 @@ namespace UseAbilities.System.Core
         {
             return GetSystemMetrics((int) systemMetrics);
         }
+
+        [DllImport(DllName, CharSet = CharSet.Auto, ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vlc);
+
+        [DllImport(DllName, CharSet = CharSet.Auto, ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
     }
 }
